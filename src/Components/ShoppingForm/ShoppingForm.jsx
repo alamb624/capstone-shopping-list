@@ -26,7 +26,7 @@ export default function ShoppingForm( {
  
  
     return ( 
-        <form data-bs-theme="dark" action="#" method="POST" onSubmit={handleSubmit} className="form"> 
+        <form action="#" method="POST" onSubmit={handleSubmit} className="form"> 
             <label htmlFor="item">Item:</label> 
             <input  
                 type="text"  
