@@ -16,7 +16,7 @@ An application to make shopping easy, by allowing you to create a shopplist that
  So that the chef is able have an accurate ammount of produce for the recipes
 
  As Christmas shopper
- I want to make quantified list of presents I still need to buy
- so that I do not miss anyone on my Christmad list
+ I want to make a quantified list of presents I still need to buy
+ so that I do not miss anyone on my Christmas list
 
  ```

@@ -1,6 +1,8 @@
 import React from 'react'; 
 
+
 function ShoppingItem({ id, item, quantity, deleteItem }) { 
+
     function handleDelete(event) { 
         event.preventDefault(); 
         deleteItem(id); 
