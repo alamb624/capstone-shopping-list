@@ -2,6 +2,7 @@ import React, {useState} from 'react';
  
 export default function ShoppingForm( {
     submitItem,
+    submitButtonText = "Add",
     defaultItem = "",
     defaultQuantity = ""
 } ) { 
@@ -42,7 +43,7 @@ export default function ShoppingForm( {
                 value={num}  
                 onChange={handleQuantityChange}  
                 required /> 
-            <button type="submit">Add</button> 
+            <button type="submit">{submitButtonText}</button> 
         </form> 
     ); 
 } 

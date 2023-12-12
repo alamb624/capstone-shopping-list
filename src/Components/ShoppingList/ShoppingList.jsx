@@ -29,6 +29,7 @@ function ShoppingItem({ id, item, quantity, deleteItem }) {
     const EditJsx = (
         <ShoppingForm 
             submitItem={handleUpdate}
+            submitButtonText="Update"
             defaultItem={item} 
             defaultQuantity={quantity} />
     );
@@ -36,7 +37,8 @@ function ShoppingItem({ id, item, quantity, deleteItem }) {
     return ( 
         <li> 
             {isEdit ? EditJsx : ReadOnlyJsx}
-            <button onClick={handleDelete}>Delete</button>  
+            <button onClick={handleDelete} disabled={isEdit}>
+                Delete</button>  
             <button onClick={handleEdit}>
                 {isEdit ? "Cancel" : "Edit"}
                 </button>       
