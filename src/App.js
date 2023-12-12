@@ -49,6 +49,22 @@ function App() {
         .then((x) => x.json()) 
         .then(loadData); 
 }; 
+
+function updateItem(id, item, quantity) {
+  fetch("https://rysgws-8080.csb.app/api/list/$[id}", {
+    method: "PUT",
+    body: JSON.stringify({
+      item: item,
+      quantity,
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+    mode:"cors"
+  })
+    .then((x)=> x.json())
+    .then(loadData);
+}
  
   return ( 
     <div className="App"> 
@@ -57,7 +73,10 @@ function App() {
       </header> 
       <main> 
         <ShoppingForm submitItem={submitItem} /> 
-        <ShoppingList items={shoppingList}  deleteItem={deleteItem}/> 
+        <ShoppingList 
+        items={shoppingList}  
+        deleteItem={deleteItem}
+        updateItem={updateItem} /> 
       </main> 
     </div> 
   ); 

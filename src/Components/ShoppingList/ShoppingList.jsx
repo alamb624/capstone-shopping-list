@@ -2,7 +2,7 @@ import React, {  useState } from 'react';
 import ShoppingForm from '../ShoppingForm/ShoppingForm';
 
 
-function ShoppingItem({ id, item, quantity, deleteItem }) { 
+function ShoppingItem({ id, item, quantity, deleteItem, updateItem }) { 
     const [isEdit, setEdit] = useState(false); 
 
     function handleDelete(event) { 
@@ -16,7 +16,7 @@ function ShoppingItem({ id, item, quantity, deleteItem }) {
     }
 
     function handleUpdate(item, quantity) {
-        console.log(item, quantity);
+       updateItem(id, item, quantity);
         setEdit(false);
     }
 
@@ -47,14 +47,16 @@ function ShoppingItem({ id, item, quantity, deleteItem }) {
 } 
 
  
-export default function ShoppingList({ items, deleteItem }) { 
+export default function ShoppingList({ items, deleteItem, updateItem}) { 
     const ItemsJsx = items.map(listItem =>  
         <ShoppingItem  
             key={listItem.id}  
             id={listItem.id} 
             item={listItem.item}  
             quantity={listItem.quantity} 
-            deleteItem={deleteItem} /> 
+            deleteItem={deleteItem}
+            updateItem={updateItem}
+        /> 
     ); 
  
     return <ul>{ItemsJsx}</ul>; 
