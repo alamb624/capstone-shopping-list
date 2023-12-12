@@ -1,4 +1,4 @@
-Hosting Link:
+Hosting Link: https://alamb624.github.io/capstone-shopping-list/ 
 
 CodeSanbox:  https://codesandbox.io/p/devbox/shopping-list-rysgws
 
