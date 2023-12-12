@@ -51,7 +51,7 @@ function App() {
 }; 
 
 function updateItem(id, item, quantity) {
-  fetch("https://rysgws-8080.csb.app/api/list/$[id}", {
+  fetch(`https://rysgws-8080.csb.app/api/list/${id}`, {
     method: "PUT",
     body: JSON.stringify({
       item: item,
