@@ -26,7 +26,7 @@ export default function ShoppingForm( {
  
  
     return ( 
-        <form action="#" method="POST" onSubmit={handleSubmit}> 
+        <form data-bs-theme="dark" action="#" method="POST" onSubmit={handleSubmit} className="form"> 
             <label htmlFor="item">Item:</label> 
             <input  
                 type="text"  
@@ -43,7 +43,7 @@ export default function ShoppingForm( {
                 value={num}  
                 onChange={handleQuantityChange}  
                 required /> 
-            <button type="submit">{submitButtonText}</button> 
+            <button type="submit" className="add">{submitButtonText}</button> 
         </form> 
     ); 
 } 

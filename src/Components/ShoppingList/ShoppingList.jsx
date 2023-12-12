@@ -37,7 +37,7 @@ function ShoppingItem({ id, item, quantity, deleteItem, updateItem }) {
     return ( 
         <li> 
             {isEdit ? EditJsx : ReadOnlyJsx}
-            <button onClick={handleDelete} disabled={isEdit}>
+            <button onClick={handleDelete} disabled={isEdit} className= "delete">
                 Delete</button>  
             <button onClick={handleEdit}>
                 {isEdit ? "Cancel" : "Edit"}

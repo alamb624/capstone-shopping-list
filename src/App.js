@@ -5,6 +5,7 @@ import React, {useState, useEffect} from 'react';
 import ShoppingForm from './Components/ShoppingForm/ShoppingForm'; 
 import ShoppingList from './Components/ShoppingList/ShoppingList'; 
 
+import './App.css';
  
 function App() { 
   const [shoppingList, setShoppingList] = useState([]); 
@@ -78,6 +79,9 @@ function updateItem(id, item, quantity) {
         deleteItem={deleteItem}
         updateItem={updateItem} /> 
       </main> 
+      <footer className="footer">
+        Treat Yourself!
+      </footer>
     </div> 
   ); 
 } 

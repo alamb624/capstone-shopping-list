@@ -1,3 +1,11 @@
 .App {
   text-align: center;
 }
+
+.App-header {
+  color: white;
+}
+
+.footer {
+  font-family: "Pacifico";
+}
