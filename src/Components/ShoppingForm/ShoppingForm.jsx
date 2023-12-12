@@ -1,12 +1,16 @@
 import React, {useState} from 'react'; 
  
-export default function ShoppingForm( {addItem} ) { 
-    const [item, setItem] = useState(''); 
-    const [num, setNum] = useState(0); 
+export default function ShoppingForm( {
+    submitItem,
+    defaultItem = "",
+    defaultQuantity = ""
+} ) { 
+    const [item, setItem] = useState(defaultItem); 
+    const [num, setNum] = useState(defaultQuantity); 
 
     const handleSubmit = (event) => { 
         event.preventDefault(); 
-        addItem(item, num); 
+        submitItem(item, num); 
     }  
 
  

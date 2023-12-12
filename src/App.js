@@ -22,7 +22,7 @@ function App() {
   useEffect(loadData, []); 
 
  
-  const addItem = (item, quantity) => { 
+  const submitItem = (item, quantity) => { 
     fetch("https://rysgws-8080.csb.app/api/list/new", { 
       method: "POST", 
       body: JSON.stringify({ 
@@ -56,7 +56,7 @@ function App() {
         <h1>Shopping List</h1> 
       </header> 
       <main> 
-        <ShoppingForm addItem={addItem} /> 
+        <ShoppingForm submitItem={submitItem} /> 
         <ShoppingList items={shoppingList}  deleteItem={deleteItem}/> 
       </main> 
     </div> 

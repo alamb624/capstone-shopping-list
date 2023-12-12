@@ -1,7 +1,9 @@
-import React from 'react'; 
+import React, {  useState } from 'react'; 
+import ShoppingForm from '../ShoppingForm/ShoppingForm';
 
 
 function ShoppingItem({ id, item, quantity, deleteItem }) { 
+    const [isEdit, setEdit] = useState(false); 
 
     function handleDelete(event) { 
         event.preventDefault(); 
@@ -10,17 +12,35 @@ function ShoppingItem({ id, item, quantity, deleteItem }) {
 
     function handleEdit(event) {
         event.preventDefault();
-        alert(id);
+        setEdit((oldEditBoolean) => !oldEditBoolean);
     }
+
+    function handleUpdate(item, quantity) {
+        console.log(item, quantity);
+        setEdit(false);
+    }
+
+    const ReadOnlyJsx = (
+        <span>
+            {item} ( { quantity})
+        </span>
+    );
+
+    const EditJsx = (
+        <ShoppingForm 
+            submitItem={handleUpdate}
+            defaultItem={item} 
+            defaultQuantity={quantity} />
+    );
 
     return ( 
         <li> 
-            <span> 
-                {item} ( {quantity} ) 
-            </span> 
+            {isEdit ? EditJsx : ReadOnlyJsx}
             <button onClick={handleDelete}>Delete</button>  
-            <button onclick={handleEdit}>Edit</button>       
-    </li> 
+            <button onClick={handleEdit}>
+                {isEdit ? "Cancel" : "Edit"}
+                </button>       
+        </li> 
     ); 
 } 
 
