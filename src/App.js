@@ -24,7 +24,7 @@ function App() {
 
  
   const submitItem = (item, quantity) => { 
-    fetch("https://rysgws-8080.csb.app/api/list/new", { 
+    fetch('https://rysgws-8080.csb.app/api/list/new', { 
       method: "POST", 
       body: JSON.stringify({ 
         item, 
